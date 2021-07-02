@@ -40,7 +40,7 @@
 diameter=34.0;
 
 // inner height (for outer dimension add 2x wall thickness)
-height=62.0;
+height=62.5;
 
 // Select how many compartments there should be in the container - default is 1.
 compartments = 1; //[1:8]
@@ -204,6 +204,7 @@ difference()
 {
 union()
 {
+    
 	difference()
 	{
 		union()
@@ -232,9 +233,9 @@ union()
 	}
     translate([0, -diameter + 4*wall_thickness(), h/2]) rotate([-90, 0, -90]) linear_extrude(2*wall_thickness()) ring(diameter/3, 2*wall_thickness());
 };
-translate([0, 0, h/2]) rotate([90, 0, 180]) curve_shape(2*wall_thickness() + diameter()/2, 2*wall_thickness(), h=h) dog_bone(opening_width, h);
+translate([0, 0, h/2]) rotate([90, 0, 180]) curve_shape(1.1*wall_thickness() + diameter()/2, 1.1*wall_thickness(), h=h) dog_bone(opening_width, h);
 linear_extrude(wall_thickness()) flower(r);
-translate([opening_width, r/2, h/3]) rotate([-120,-90,0]) linear_extrude(wall_thickness()) text(name, size=5, center=true);
+translate([0, 0, h/2]) rotate([90, 0, 160]) curve_shape(1.1*wall_thickness() + diameter()/2, .6*wall_thickness(), h=h) rotate([0, 0, 90]) text(name, size=5, halign="center");
 }
 
 module container_hull(r,h,chamfer,thread_notch=[0,0])
