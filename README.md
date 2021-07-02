@@ -18,6 +18,8 @@ I've owned:
 The design is an attempt to address all of these challenges. It also provides the
 opportunity to engrave the container with your pet's name!
 
+<img src="https://user-images.githubusercontent.com/6743515/124312076-be2be300-db3c-11eb-81c5-5ee2d98367aa.PNG" width="300"><img src="https://user-images.githubusercontent.com/6743515/124312068-bb30f280-db3c-11eb-8bfa-4cc88c3df2ac.PNG" width="300">
+
 ## Usage
 You can adjust the scad file to customize the design to your own needs. The following parameters
 are particularly relevant:
