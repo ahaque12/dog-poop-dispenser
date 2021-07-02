@@ -1,0 +1,22 @@
+{
+    "parameterSets": {
+        "design default values": {
+            "backlash": "-1",
+            "compartments": "1",
+            "container_bottom_thick": "-1",
+            "diameter": "30",
+            "divider_wall_thickness": "-1",
+            "height": "75",
+            "inside_chamfer": "2.5",
+            "lid_top_thick": "-1",
+            "opening_width": "5",
+            "outside_chamfer": "5",
+            "part": "container_",
+            "quality": "100",
+            "solid_container": "0",
+            "wall_thickness": "-1"
+        }
+    },
+    "parameterSets": "",
+    "fileFormatVersion": "1"
+}
