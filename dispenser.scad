@@ -1,38 +1,7 @@
-// 'Container with Knurled Lid' by wstein 
-// is licensed under the Attribution - Non-Commercial - Share Alike license. 
-// (c) April 2015 - April 2018
-// please refer the complete license here: http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+// 'Dog Poop Bag Dispenser' by ahaque
 
-
-// Version 1.8.1
-// Fixed outside quality of the container and lid.
-//
-// Version 1.8
-// New simple non knurled lid.
-//
-// Version 1.7.1a
-// Bug fixed for latest customizer.
-//
-// Version 1.7
-// generate all lid styles at once
-// code optimized for openscad 2015.03 (no more timeout)
-//
-// Version 1.6
-// added compartment option
-// part "both" removed
-//
-// Version 1.5
-// fixed broken left knurled lid.
-//
-// Version 1.4
-// new expert setting.
-//
-// Version 1.3
-// new: use $fn=100 for all threads to make them a little bit smoother.
-//
-// Version 1.2
-// new: lid optimized for diameter smaller 20mm. The lid of an container with a diameter less than 20mm has now always the same height of about 6mm. This concerns also the thread which may not fit to containers of older versions!
-// fixed: selecting both (Container and Lid) generated a none printable file: The object are on different level!
+// Credit for 'Container with Knurled Lid' to wstein 
+// Base container can be found at https://www.thingiverse.com/thing:612709
 
 /* [Dimensions] */
 
