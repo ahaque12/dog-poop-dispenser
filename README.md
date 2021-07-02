@@ -18,6 +18,8 @@ I've owned:
 The design is an attempt to address all of these challenges. It also provides the
 opportunity to engrave the container with your pet's name!
 
+![dog-dispenser-gif](https://user-images.githubusercontent.com/6743515/124319785-c7bb4800-db48-11eb-86ee-648e45dda4b9.gif)
+
 <img src="https://user-images.githubusercontent.com/6743515/124312076-be2be300-db3c-11eb-81c5-5ee2d98367aa.PNG" width="300"><img src="https://user-images.githubusercontent.com/6743515/124312068-bb30f280-db3c-11eb-8bfa-4cc88c3df2ac.PNG" width="300">
 
 ## Usage
