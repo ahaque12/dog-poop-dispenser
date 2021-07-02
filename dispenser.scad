@@ -37,16 +37,16 @@
 /* [Dimensions] */
 
 // inner diameter (for outer dimension add 2x wall thickness) - minimum = 8.0mm
-diameter=35.0;
+diameter=34.0;
 
 // inner height (for outer dimension add 2x wall thickness)
-height=65.0;
+height=62.0;
 
 // Select how many compartments there should be in the container - default is 1.
 compartments = 1; //[1:8]
 
 // Select width of opening for bags.
-opening_width = 7; //[10:30]
+opening_width = 7; //[5:15]
 
 
 /* [Appearance] */
@@ -162,6 +162,9 @@ union()
 		cylinder(r=r+wall_thickness()/2,h=h+.1);
         
 	}
+    
+    // Have ring on top of lid
+    
     //translate([0, 0, r+wall_thickness()]) rotate([0, -90, 0]) linear_extrude(wall_thickness()) ring(r, wall_thickness());
 }
 
@@ -229,7 +232,7 @@ union()
 	}
     translate([0, -diameter + 4*wall_thickness(), h/2]) rotate([-90, 0, -90]) linear_extrude(2*wall_thickness()) ring(diameter/3, 2*wall_thickness());
 };
-translate([0, r, h/2]) rotate([90, 0, 0]) linear_extrude(r/2) dog_bone(opening_width, h);
+translate([0, 0, h/2]) rotate([90, 0, 180]) curve_shape(2*wall_thickness() + diameter()/2, 2*wall_thickness(), h=h) dog_bone(opening_width, h);
 linear_extrude(wall_thickness()) flower(r);
 translate([opening_width, r/2, h/3]) rotate([-120,-90,0]) linear_extrude(wall_thickness()) text(name, size=5, center=true);
 }
@@ -288,15 +291,35 @@ module flower(r) {
     union(){
         circle(d);
         for(a=[0:6]) {
-            rotate(a*60) translate([d, 0, 0]) scale([3, .5, 1]) circle(d/2);
+            rotate(a*60) translate([d, 0, 0]) scale([3, 1, 1]) circle(d/2);
         }
     }
 }
 
 module ring(r, t) {
-    difference() {
-        circle(r);
-        circle(r - t);
-        translate([-r*5/3, 0, 0]) square(2*r, center=true);
+    union() {
+        difference(){
+            translate([-r, -r, 0]) square([r, 2*r]);
+            translate([-r, -r, 0]) square([r/3, 2*r]);
+            circle(r);
+        }
+        difference() {
+            circle(r);
+            circle(r - t);
+            translate([-r*5/3, 0, 0]) square(2*r, center=true);
+        }
+}
+}
+
+module curve_shape(r, t, h=100) {
+// Curve 2d shape onto cylinder.
+    intersection() {
+        difference() {
+            rotate([0,90,90]) cylinder(h, r, r, center=true);
+            rotate([0,90,90]) cylinder(h, r-t, r-t, center=true);
+            
+        }
+    linear_extrude(r) children();
     }
+    
 }
