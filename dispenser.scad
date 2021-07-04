@@ -20,8 +20,12 @@ opening_width = 7; //[5:15]
 
 /* [Appearance] */
 
-// Name to engrave
+// Name to engrave, designed for short (up to 6 letters) name.
 name="Mocha";
+
+// Second line to engrave, designed to fit 10 digit number. Leave blank to engrave nothing.
+additional_line="";
+
 
 // Container outside chamfer in percent of diameter. Use 0 for a flat outside bottom - default is 5% 
 outside_chamfer=5.0; 
@@ -205,6 +209,7 @@ union()
 translate([0, 0, h/2]) rotate([90, 0, 180]) curve_shape(1.1*wall_thickness() + diameter()/2, 1.2*wall_thickness(), h=h) dog_bone(opening_width, h);
 linear_extrude(wall_thickness()) flower(r);
 translate([0, 0, h/2]) rotate([90, 0, 160]) curve_shape(1.1*wall_thickness() + diameter()/2, .6*wall_thickness(), h=h) rotate([0, 0, 90]) text(name, size=5, halign="center");
+if (additional_line != "") translate([0, 0, h/2]) rotate([90, 0, 205]) curve_shape(1.1*wall_thickness() + diameter()/2, .6*wall_thickness(), h=h) rotate([0, 0, 90]) text(additional_line, size=2, halign="center");
 }
 
 module container_hull(r,h,chamfer,thread_notch=[0,0])

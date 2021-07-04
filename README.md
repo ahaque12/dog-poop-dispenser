@@ -30,7 +30,8 @@ are particularly relevant:
 
 * `diameter` - inner diameter (mm) of container.
 * `opening_width` - width (mm) of opening for bags.
-* `name` - name to engrave.
+* `name` - name to engrave. 
+* `additional_line` - additional line to engrave.
 
 Use OpenSCAD a export objects to stl. You need to print two parts, a lid and a container. 
 Using the customizer change Expert -> part to "Container" and export to stl.
@@ -42,7 +43,6 @@ Recommended settings for printing are:
 * `infill` - 20%
 * `layer_height` - .2 mm
 * `supports` - yes
-
 
 ## Credits
 
